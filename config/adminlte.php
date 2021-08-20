@@ -266,7 +266,7 @@ return [
         ],
         [
             'text' => 'Ventas',
-            'url'  => 'admin/settings',
+            'url'  => 'pos',
             'icon' => 'fas fa-fw fa-shopping-cart',
         ],
         [

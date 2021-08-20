@@ -18,8 +18,8 @@ class CreateProductsTable extends Migration
 
             $table->string('name');
             $table->string('barcode')->nullable();
-            $table->decimal('cost',10,2)->default(0);
-            $table->decimal('price',10,2)->default(0);
+            $table->integer('cost')->default(0);
+            $table->integer('price')->default(0);
             $table->integer('stock');
             $table->integer('alert');
             $table->string('image')->nullable();

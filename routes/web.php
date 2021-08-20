@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Categories;
 use App\Http\Livewire\Denominations;
+use App\Http\Livewire\Pos;
 use App\Http\Livewire\Products;
 
 
@@ -21,3 +22,4 @@ Route::get('/category', function () {
 Route::get('categories', Categories::class);
 Route::get('products', Products::class);
 Route::get('denominations', Denominations::class);
+Route::get('pos', Pos::class);
