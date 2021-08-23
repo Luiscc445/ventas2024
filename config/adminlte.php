@@ -271,17 +271,17 @@ return [
         ],
         [
             'text' => 'Roles',
-            'url'  => 'admin/settings',
+            'url'  => 'roles',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
             'text' => 'Permisos',
-            'url'  => 'admin/settings',
+            'url'  => 'permission',
             'icon' => 'fas fa-fw fa-check-square',
         ],
         [
             'text' => 'Acignar',
-            'url'  => 'admin/settings',
+            'url'  => 'asignar',
             'icon' => 'fas fa-fw fa-eye',
         ],
         [

@@ -19,7 +19,13 @@
         })
 
         window.livweire,on('sale-ok', msg => {
-            noty(msg)
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: msg,
+                showConfirmButton: false,
+                timer: 2000
+            })
         })
 
         window.livweire,on('print-ticket', saleId => {

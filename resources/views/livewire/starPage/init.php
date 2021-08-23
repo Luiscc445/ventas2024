@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-12 mt-4">
         <div class="card">
             
             <div class="card-header">
@@ -8,14 +8,14 @@
                 </h4>
                 <div class="card-tools">
                   <ul class="pagination pagination-sm float-right">
-                    <a href="javascript:void(0)" class="bg-dark" data-toggle="modal" data-target="#theModal">Agregar</a>
+                    <a href="javascript:void(0)" class="btn btn-sm bg-dark" data-toggle="modal" data-target="#theModal">Agregar</a>
                   </ul>
                 </div>
             </div>
 
             Search
 
-            <div class="body">
+            <div class="card-body">
 
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped mt-1">

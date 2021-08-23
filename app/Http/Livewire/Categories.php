@@ -137,6 +137,7 @@ class Categories extends Component
 
     }
 
+
     public function destroy(Category $category)
     {
         $imageName = $category->image;
