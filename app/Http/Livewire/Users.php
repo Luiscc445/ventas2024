@@ -14,7 +14,7 @@ class Users extends Component
     use WithPagination;
     use WithFileUploads;
 
-    public $componentName, $pageTitle, $search, $name, $phone, $profile, $email, $password, $status, $role, $image, $fileLoaded, $selected_id;
+    public $componentName, $pageTitle, $search, $name, $phone, $profile, $email, $password, $status, $image, $fileLoaded, $selected_id;
     private $pagination = 5;
 
     protected $listeners = ['deleteRow' => 'destroy'];
@@ -58,6 +58,9 @@ class Users extends Component
         $this->image = '';
         $this->selected_id = 0;
 
+        $this->resetValidation();
+        $this->resetPage();
+        
         $this->emit('cancel', 'cancelar');
     }
 
@@ -195,5 +198,5 @@ class Users extends Component
             }
         }        
     }
-    
+
 }

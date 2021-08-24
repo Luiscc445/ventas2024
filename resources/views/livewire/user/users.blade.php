@@ -24,7 +24,8 @@
                             <tr>
                                 <th class="table-th text-white text-center">Usuario</th>
                                 <th class="table-th text-white text-center">Correo</th>
-                                <th class="table-th text-white text-center">Imagen</th>
+                                <th class="table-th text-white text-center">Status</th>
+                                <th class="table-th text-white text-center">Perfil</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -34,15 +35,11 @@
                                 <tr>
                                     <td><h6 class="text-center">{{ $item->name }}</h6></td>
                                     <td><h6 class="text-center">{{ $item->email }}</h6></td>
-
                                     <td class="text-center">
-                                        
-                                        <span>
-                                            <img src="{{ asset('storage/users/' . $item->image) }}" alt="imagen" class="card-img-top img-fluid">
-                                        </span>
-                                                                            
-
+                                        <span class="badge {{ $item->status == 'ACTIVE' ? 'badge-success' : 'badge-danger' }} text-uppercase">{{ $item->status }}</span>
                                     </td>
+                                    <td><h6 class="text-center">{{ $item->profile }}</h6></td>
+
                                     <td class="text-center">
 
                                         <a href="javascript:void(0)"
@@ -53,9 +50,9 @@
                                         </a>
 
                                         <a href="javascript:void(0)" 
-                                        onclick="Comfirm('{{ $item->id }}')"
+                                        onclick="Confirm('{{ $item->id }}')"
                                         class="btn btn-dark" 
-                                        title="delete">
+                                        title="destroy">
                                             <i class="fas fa-trash"></i>
                                         </a>
                                     </td>

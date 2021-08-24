@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-sm-12 col-md-8">
 
-            <div class="input-group">
+            <div>
                 <label>Nombre</label>
                 <input type="text" wire:model.lazy="name" class="form-control" placeholder="Ej: cursos">
 
@@ -13,8 +13,8 @@
             </div>
         </div>
 
-        <div class="col-sm-12 col-md-4 mt-3">
-            <div class="input-group">
+        <div class="col-sm-12 col-md-4">
+            <div>
                 <label>Código</label>
                 <input type="text" wire:model.lazy="barcode" class="form-control" placeholder="Ej: 134567">
 
@@ -25,7 +25,7 @@
         </div>
 
         <div class="col-sm-12 col-md-4 mt-3">
-            <div class="input-group">
+            <div>
                 <label>Costo</label>
                 <input type="text" data-type="currency" wire:model.lazy="cost" class="form-control" placeholder="Ej: 0.00">
 
@@ -36,7 +36,7 @@
         </div>
 
         <div class="col-sm-12 col-md-4 mt-3">
-            <div class="input-group">
+            <div>
                 <label>Precio</label>
                 <input type="text" data-type="currency" wire:model.lazy="price" class="form-control" placeholder="Ej: 0.00">
 
@@ -47,7 +47,7 @@
         </div>
 
         <div class="col-sm-12 col-md-4 mt-3">
-            <div class="input-group">
+            <div>
                 <label>Stock</label>
                 <input type="number" data-type="currency" wire:model.lazy="stock" class="form-control" placeholder="Ej: 0">
 
@@ -58,7 +58,7 @@
         </div>
 
         <div class="col-sm-12 col-md-4 mt-3">
-            <div class="input-group">
+            <div>
                 <label>Alertas</label>
                 <input type="number" data-type="currency" wire:model.lazy="alert" class="form-control" placeholder="Ej: 5">
 
@@ -69,7 +69,7 @@
         </div>
 
         <div class="col-sm-12 col-md-4 mt-3">
-            <div class="input-group">
+            <div>
                 <label>Categoria</label>
                 <select wire:model="categoryid" class="form-control">
                     <option value="Elegir" disabled>Elegir</option>
@@ -84,7 +84,7 @@
 
         <div class="col-sm-12 col-md-8 mt-3">
             <div class="form-group custom-file">
-                <input type="file" class="form control custom-file-input" wire:model.lazy="image" accept="image/x-png, image/gif, image/jpeg">
+                <input type="file" class="form-control custom-file-input" wire:model.lazy="image" accept="image/x-png, image/gif, image/jpeg">
                 <label class="custom-file-label">Imágen {{ $image }}</label>
 
                 @error('image')

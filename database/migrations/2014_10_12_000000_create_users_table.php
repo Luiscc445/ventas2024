@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('phone')->nullable();
             $table->string('email')->unique();
-            $table->enum('profile',['ADMIN', 'EMPLOYEE'])->default('ADMIN');
+            $table->string('profile');
             $table->enum('status',['ACTIVE', 'LOCKED'])->default('ACTIVE');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
