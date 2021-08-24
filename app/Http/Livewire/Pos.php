@@ -266,7 +266,7 @@ class Pos extends Component
 
     public function printTicket($sale)
     {
-        return Redirect::to("print://$sale->id");
+        return \Redirect::to("print://$sale->id");
     }
 
 }

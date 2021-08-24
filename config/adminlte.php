@@ -280,13 +280,13 @@ return [
             'icon' => 'fas fa-fw fa-check-square',
         ],
         [
-            'text' => 'Acignar',
+            'text' => 'Asignar',
             'url'  => 'asignar',
             'icon' => 'fas fa-fw fa-eye',
         ],
         [
             'text' => 'Usuarios',
-            'url'  => 'admin/settings',
+            'url'  => 'users',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
