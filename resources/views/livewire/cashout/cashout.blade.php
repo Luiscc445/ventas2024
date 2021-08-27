@@ -17,7 +17,7 @@
                             <select wire:model="userid" class="form-control">
                                 <option value="0" disabled>Elegir</option>
                                 @foreach ($users as $item)
-                                    <option value="{{ $item->id }}" disabled>{{ $item->name }}</option>
+                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
                                 @endforeach
                             </select>
                             @error('userid')
@@ -95,7 +95,7 @@
                                             <td class="text-cener"><h6>{{ $item->created_at }}</td>
                                             <td class="text-cener">
                                                 <button wire:click.prevent="viewDetail({{ $item }})" class="btn btn-sm btn-dark">
-                                                    <i class="fas fa-lit"></i>
+                                                    <i class="fas fa-list"></i>
                                                 </button>
                                             </td>
                                         </tr>
@@ -117,8 +117,8 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function(){
-        window.livewire.on('show-modal' msg => {
-            $('#theModal').modal('show')
+        window.livewire.on('show-modal', msg => {
+            $('#modal-details').modal('show')
         })
     });
 </script>

@@ -49,8 +49,6 @@
                             </tr>
                         </tbody>
                     </table>
-
-                    Pagination
                 </div>
                 
             </div>

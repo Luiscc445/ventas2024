@@ -9,11 +9,11 @@ use Carbon\Carbon;
 
 class Cashout extends Component
 {
-    public $fronmDate, $toDate, $userid, $total, $items, $sales, $details;
+    public $fromDate, $toDate, $userid, $total, $items, $sales, $details;
 
     public function mount()
     {
-        $this->fronmDate = null;
+        $this->fromDate = null;
         $this->toDate = null;
         $this->userid = 0;
         $this->total = 0;
@@ -32,10 +32,10 @@ class Cashout extends Component
 
     public function consultar()
     {
-        $fi = Carbon::parse($this->fronmDate)->format('Y-m-d') . ' 00:00:00';
+        $fi = Carbon::parse($this->fromDate)->format('Y-m-d') . ' 00:00:00';
         $ff = Carbon::parse($this->toDate)->format('Y-m-d') . ' 23:59:59';
 
-        $this->sales = Sales::wereBetween('created_at', [$fi, $ff])
+        $this->sales = Sales::wherebetween('created_at', [$fi, $ff])
                     ->where('status', 'PAID')
                     ->where('user_id', $this->userid)
                     ->get();
@@ -46,13 +46,13 @@ class Cashout extends Component
 
     public function viewDetail(Sales $sale)
     {
-        $fi = Carbon::parse($this->fronmDate)->format('Y-m-d') . ' 00:00:00';
+        $fi = Carbon::parse($this->fromDate)->format('Y-m-d') . ' 00:00:00';
         $ff = Carbon::parse($this->toDate)->format('Y-m-d') . ' 23:59:59';
 
         $this->details = Sales::join('sales_details as d', 'd.sale_id', 'sales.id')
                             ->join('products as p', 'p.id', 'd.product_id')
                             ->select('d.sale_id', 'p.name as product', 'd.quantity', 'd.price')
-                            ->wereBetween('sales.created_at', [$fi, $ff])
+                            ->wherebetween('sales.created_at', [$fi, $ff])
                             ->where('sales.status', 'PAID')
                             ->where('sales.user_id', $this->userid)
                             ->where('sales.id', $sale->id)

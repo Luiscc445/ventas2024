@@ -294,6 +294,11 @@ return [
             'url'  => 'denominations',
             'icon' => 'fas fa-fw fa-coins',
         ],
+        [
+            'text' => 'Arqueos',
+            'url'  => 'cashout',
+            'icon' => 'fas fa-fw fa-money-bill-alt',
+        ],
 
         /*
         [
@@ -455,6 +460,21 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+        'Flatpickr' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => '//npmcdn.com/flatpickr/dist/themes/dark.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '//cdn.jsdelivr.net/npm/flatpickr',
                 ],
             ],
         ],
