@@ -102,12 +102,12 @@ return [
     |
     */
 
-    'classes_auth_card' => 'card-outline card-primary',
+    'classes_auth_card' => 'bg-gradient-dark',
     'classes_auth_header' => '',
-    'classes_auth_body' => '',
-    'classes_auth_footer' => '',
-    'classes_auth_icon' => '',
-    'classes_auth_btn' => 'btn-flat btn-primary',
+    'classes_auth_body' => 'bg-gradient-dark',
+    'classes_auth_footer' => 'text-center',
+    'classes_auth_icon' => 'fa-fw text-light',
+    'classes_auth_btn' => 'btn-flat btn-light',
 
     /*
     |--------------------------------------------------------------------------
@@ -188,7 +188,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'panel',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -226,29 +226,33 @@ return [
 
     'menu' => [
         // Navbar items:
+        
         [
             'type'         => 'navbar-search',
             'text'         => 'search',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
         [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
+       
 
         // Sidebar items:
+        /*
         [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ],
+        */
         [
             'text' => 'blog',
-            'url'  => 'admin/blog',
+            'url'  => 'panel',
             'can'  => 'manage-blog',
         ],
         [
             'text'        => 'Panel principal',
-            'url'         => 'admin/pages',
+            'url'         => 'panel',
             'icon'        => 'fas fa-fw fa-tachometer-alt',
             'label'       => '',
             'label_color' => 'success',
@@ -295,9 +299,14 @@ return [
             'icon' => 'fas fa-fw fa-coins',
         ],
         [
-            'text' => 'Arqueos',
+            'text' => 'Corte Caja',
             'url'  => 'cashout',
             'icon' => 'fas fa-fw fa-money-bill-alt',
+        ],
+        [
+            'text' => 'Reportes',
+            'url'  => 'reports',
+            'icon' => 'fas fa-fw fa-chart-bar',
         ],
 
         /*

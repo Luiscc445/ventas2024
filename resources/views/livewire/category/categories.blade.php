@@ -8,7 +8,9 @@
                 </h4>
                 <div class="card-tools">
                   <ul class="pagination pagination-sm float-right">
+                    @can('categoria_create')
                     <a href="javascript:void(0)" class="btn btn-sm bg-dark" data-toggle="modal" data-target="#theModal">Agregar</a>
+                    @endcan
                   </ul>
                 </div>
             </div>
@@ -38,20 +40,23 @@
                                         </span>
                                     </td>
                                     <td class="text-center">
-
+                                        @can('categoria_edit')
                                         <a href="javascript:void(0)" 
                                         wire:click="edit({{ $item->id }})"
                                         class="btn btn-dark btn-sm" 
                                         title="edit">
                                             <i class="fas fa-edit"></i>
                                         </a>
+                                        @endcan
 
+                                        @can('categoria_delete')
                                         <a href="javascript:void(0)" 
                                         onclick="Confirm('{{ $item->id }}', '{{ $item->products->count() }}')"
                                         class="btn btn-dark btn-sm" 
                                         title="delete">
                                             <i class="fas fa-trash"></i>
                                         </a>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach

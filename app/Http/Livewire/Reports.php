@@ -54,13 +54,14 @@ class Reports extends Component
         if($this->userId == 0)
         {
             $this->data = Sales::join('users as u', 'u.id', 'sales.user_id')
-                        ->select('sales.*', 'u.name as user')
-                        ->whereBetween('sales.created_at', [$from, $to])
-                        ->get(); 
+            ->select('sales.*', 'u.name as user')
+            ->whereBetween('sales.created_at', [$from, $to])
+            ->get(); 
+            
         } else {
             $this->data = Sales::join('users as u', 'u.id', 'sales.user_id')
                         ->select('sales.*', 'u.name as user')
-                        ->whereBetween('sales.created_at', [$from, $to])
+                        ->wherebetween('sales.created_at', [$from, $to])
                         ->where('sales.user_id', $this->userId)
                         ->get(); 
         }
@@ -81,6 +82,11 @@ class Reports extends Component
         $this->countDetails = $this->details->sum('quantity');
         $this->saleId = $saleId;
 
-        $this->emit('show-modal', 'detalles cargados');
+        $this->emit('show-modal', 'detalles');
+    }
+
+    public function close()
+    {
+        $this->emit('close', 'cerrar');
     }
 }

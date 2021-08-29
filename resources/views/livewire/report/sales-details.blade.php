@@ -48,7 +48,7 @@
 
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-dark close-btn text-info" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" wire:click.prevent="close()" class="btn btn-dark close-btn text-info" data-bs-dismiss="modal">Cerrar</button>
 
         </div>
     </div>
