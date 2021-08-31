@@ -82,10 +82,24 @@
 
         window.livewire.on('cateory-added', msg => {
             $('#theModal').modal('hide')
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: msg,
+                showConfirmButton: false,
+                timer: 2000
+            })
         })
 
         window.livewire.on('category-updated', msg => {
             $('#theModal').modal('hide')
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: msg,
+                showConfirmButton: false,
+                timer: 2000
+            })
         })
 
         window.livewire.on('cancel', msg => {

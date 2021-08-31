@@ -92,10 +92,24 @@
 
         window.livewire.on('product-added', msg => {
             $('#theModal').modal('hide')
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: msg,
+                showConfirmButton: false,
+                timer: 2000
+            })
         })
 
         window.livewire.on('product-updated', msg => {
             $('#theModal').modal('hide')
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: msg,
+                showConfirmButton: false,
+                timer: 2000
+            })
         })
 
         window.livewire.on('product-deleted', msg => {
