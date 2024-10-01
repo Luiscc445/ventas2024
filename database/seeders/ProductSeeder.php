@@ -15,7 +15,7 @@ class ProductSeeder extends Seeder
     public function run()
     {
         Product::create([
-            'name' => 'Camiseta',
+            'name' => 'Samsung Galaxy Buds',
             'cost' => 200,
             'price' => 350,
             'barcode' => '12342345',
@@ -26,7 +26,7 @@ class ProductSeeder extends Seeder
         ]);
 
         Product::create([
-            'name' => 'Pantalon hombre',
+            'name' => 'Apple Air Pods',
             'cost' => 200,
             'price' => 350,
             'barcode' => '1234232345',
@@ -37,7 +37,7 @@ class ProductSeeder extends Seeder
         ]);
 
         Product::create([
-            'name' => 'Teniz jums',
+            'name' => 'Daewoo',
             'cost' => 200,
             'price' => 350,
             'barcode' => '12342354645',

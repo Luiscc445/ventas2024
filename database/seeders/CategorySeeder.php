@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
 use App\Models\Category;
 
 class CategorySeeder extends Seeder
@@ -15,19 +14,19 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        Category::create([
-            'name' => 'ROPA',
-            'image' => 'https://dummyimage.com/200x150/eddced/000005'
-        ]);
+        Category::updateOrCreate(
+            ['name' => 'BLUETOOTH'],
+            ['image' => 'https://ibb.co/rtQVwCK']
+        );
 
-        Category::create([
-            'name' => 'TENIS',
-            'image' => 'https://dummyimage.com/200x150/eddced/000005'
-        ]);
+        Category::updateOrCreate(
+            ['name' => 'CABLE'],
+            ['image' => 'https://ibb.co/p1TZrSF']
+        );
 
-        Category::create([
-            'name' => 'PANTALON',
-            'image' => 'https://dummyimage.com/200x150/eddced/000005'
-        ]);
+        Category::updateOrCreate(
+            ['name' => 'MESA'],
+            ['image' => 'https://ibb.co/yfb7JTy']
+        );
     }
 }
