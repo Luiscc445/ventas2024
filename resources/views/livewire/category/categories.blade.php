@@ -19,18 +19,21 @@
             @include('common.searchbox')
 
             <div class="card-body">
+
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped mt-1">
+
                         <thead class="text-white bg-dark">
                             <tr>
                                 <th class="table-th text-white">Descripción</th>
                                 <th class="table-th text-white">Imagen</th>
+                                <th></th>
                             </tr>
                         </thead>
+
                         <tbody>
                             @foreach ($categories as $item)
                                 <tr>
-
                                     <td>
                                         <h6> {{ $item->name }} </h6>
                                     </td>
@@ -56,21 +59,13 @@
                                         </a>
                                         {{-- @endcan--}}
                                     </td>
-
-                                    <td>
-                                        <h6>{{ $item->name }}</h6>
-                                    </td>
-                                    <td class="text-center">
-                                        <span>
-                                            <img src="{{ asset('storage/categories/' . $item->name . '.jpg') }}"
-                                                alt="imagen de {{ $item->name }}" height="70" width="80" class="rounded">
-                                        </span>
-                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
+
                     {{ $categories->links() }}
+
                 </div>
 
             </div>
@@ -86,7 +81,7 @@
             $('#theModal').modal('show')
         })
 
-        window.livewire.on('category-added', msg => {
+        window.livewire.on('cateory-added', msg => {
             $('#theModal').modal('hide')
             Swal.fire({
                 position: 'top-end',
@@ -112,7 +107,6 @@
             $('#theModal').modal('hide')
         })
     });
-
 
     function Confirm(id, products) {
         if (products > 0) {
@@ -140,5 +134,4 @@
             }
         })
     };
-
 </script>
