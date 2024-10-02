@@ -33,14 +33,14 @@ class Roles extends Component
 
     public function render()
     {
-        if(strlen($this->search) > 0)
+        if (strlen($this->search) > 0)
             $roles = Role::where('name', 'like', '%' . $this->search . '%')->paginate($this->pagination);
         else
             $roles = Role::orderBy('name', 'asc')->paginate($this->pagination);
 
         return view('livewire.roles.roles', compact('roles'))
-                ->extends('adminlte::page')
-                ->section('content');
+            ->extends('adminlte::page')
+            ->section('content');
     }
 
     public function resetUI()
@@ -115,10 +115,9 @@ class Roles extends Component
 
     public function asignarRoles($rolesList)
     {
-        if ($this->userSelected > 0) 
-        {
+        if ($this->userSelected > 0) {
             $user = USer::find($this->userSelected);
-            if($user) {
+            if ($user) {
                 $user->syncRoles($rolesList);
                 $this->emit('msg-ok', 'Role asignado correctamente');
                 $this->resetInput();
